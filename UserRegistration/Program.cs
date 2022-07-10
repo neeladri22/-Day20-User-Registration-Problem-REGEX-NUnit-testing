@@ -27,6 +27,9 @@ namespace UserRegistration
 
             //Validation for Password with upper case
             P.Validate_Password("paswoRd");
+
+            //Validation for Password with upper case and numeric number
+            P.Validate_Password("paswoRd1");
         }
 
         public bool Validate_FirstName(string firstName)
@@ -72,6 +75,16 @@ namespace UserRegistration
 
             return Regex.IsMatch(password, PasswordPattern);
         }
+
+        public bool Validate_PasswordUppercaseAndNumericNumber(string password)
+        {
+            //Password  - Min 8 Characters and should have atleast 1 upeer case, 1 Numeric Number 
+            string PasswordPattern = @"^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$";
+
+            return Regex.IsMatch(password, PasswordPattern);
+        }
+
+       
 
     }
 }
