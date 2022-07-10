@@ -1,13 +1,33 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using System.Text.RegularExpressions;
+using UserRegistration;
+
 
 namespace TestProject
 {
-    [TestClass]
-    public class UnitTest1
+    
+    public class Test
     {
-        [TestMethod]
-        public void TestMethod1()
+        public Program program;
+
+        [SetUp]
+        public void Setup()
         {
+            //Arrange 
+            program = new Program();
+        }
+
+        [Test]
+      
+        public void Check_Validation_for_FirstName()
+        {
+            //Act
+            string firstName = "Prateek";
+
+            var result = program.Validate_FirstName(firstName);
+
+            //Assert
+            Assert.IsTrue(result);
         }
     }
 }
