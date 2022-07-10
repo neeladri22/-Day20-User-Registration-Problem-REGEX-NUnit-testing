@@ -22,10 +22,19 @@ namespace TestProject
         public void Check_Validation_for_FirstName()
         {
             //Act
-            string firstName = "Prateek";
-
+            string firstName = "Neeladri";
             var result = program.Validate_FirstName(firstName);
+            //Assert
+            Assert.IsTrue(result);
+        }
 
+        [Test]
+        // validating the Last Name
+        public void Check_Validation_for_LastName()
+        {
+            //Act
+            string lastName = "Pulakala";
+            var result = program.Validate_LastName(lastName);
             //Assert
             Assert.IsTrue(result);
         }
