@@ -93,5 +93,17 @@ namespace TestProject
             //Assert
             Assert.IsTrue(result);
         }
+        [Test]
+        //Unit test for validating the Password
+        public void Check_Validation_for_password_Uppercase_NumericNumberAndSpecialCharacter()
+        {
+            //Act
+            string password = "paSSword@123";
+
+            var result = program.Validate_Password_uppercase_NumericNumberAndSpecialCharacter(password);
+
+            //Assert
+            Assert.IsTrue(result);
+        }
     }
 }
