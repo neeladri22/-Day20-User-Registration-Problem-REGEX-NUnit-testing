@@ -16,6 +16,8 @@ namespace UserRegistration
 
             //Validate last name
             P.Validate_FirstName("Pulakala");
+            //Validation for Email
+            P.Validate_Email("neeladr.pul@gmail.co.in");
         }
 
         public bool Validate_FirstName(string firstName)
@@ -32,6 +34,13 @@ namespace UserRegistration
             string LastNamePattern = @"^[A-Z]{1}[a-zA-Z]{2,}$";
 
             return Regex.IsMatch(lastName, LastNamePattern);
+        }
+        public bool Validate_Email(string email)
+        {
+            //Email Pattern 
+            string EmailPattern = @"^([A-Za-z]{3,}([.a-z]*)[@][a-z]{2,}[.][a-z]{2,3}([.a-z]*))$";
+
+            return Regex.IsMatch(email, EmailPattern);
         }
 
     }
