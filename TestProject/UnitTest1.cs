@@ -48,5 +48,15 @@ namespace TestProject
             //Assert
             Assert.IsTrue(result);
         }
+        [Test]
+        //Validating the Mobile Number
+        public void Check_Validation_for_MobileNumber()
+        {
+            //Act
+            string mobileNumber = "91 7385645875";
+            var result = program.Validate_MobileNumber(mobileNumber);
+            //Assert
+            Assert.IsTrue(result);
+        }
     }
 }
