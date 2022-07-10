@@ -58,5 +58,16 @@ namespace TestProject
             //Assert
             Assert.IsTrue(result);
         }
+
+        [Test]
+        //Unit test for validating the Password
+        public void Check_Validation_Password()
+        {
+            //Act
+            string password = "Password";
+            var result = program.Validate_Password(password);
+            //Assert
+            Assert.IsTrue(result);
+        }
     }
 }
