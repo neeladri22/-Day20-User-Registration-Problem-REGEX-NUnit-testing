@@ -33,6 +33,9 @@ namespace UserRegistration
 
             //Validation for Password with upper case, numeric number and special letter
             P.Validate_Password("paswoRd1@");
+
+            //Validation for Email
+            P.ValidateSampleEmails("xyz.222@gmail.com");
         }
 
         public bool Validate_FirstName(string firstName)
@@ -93,6 +96,13 @@ namespace UserRegistration
             string PasswordPattern = @"^(?=.*[A-Z])(?=.*[@#$!%^&-+=()])(?=.*[0-9])(?=.*[a-z]).{8,}$";
 
             return Regex.IsMatch(password, PasswordPattern);
+        }
+        public bool ValidateSampleEmails(string sampleEmail)
+        {
+            //Email Pattern 
+            string SampleEmailPattern = @"^([a-z]{3}([\.\+\-0-9]*)@[a-z0-9]{1,}.[a-z]{3,}[.a-z]*)";
+
+            return Regex.IsMatch(sampleEmail, SampleEmailPattern);
         }
 
     }
